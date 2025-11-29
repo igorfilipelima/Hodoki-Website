@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="pt-PT">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hodoki – Consultoria Digital, IA e Desenvolvimento Web em Gondomar</title>
+    <meta name="description"
+        content="A Hodoki ajuda empresas a modernizar processos com tecnologia e inteligência artificial. Consultoria digital, desenvolvimento de webapps, websites, apps e jogos, e formação em IA e ChatGPT." />
+    <meta name="author" content="Hodoki" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <meta property="og:title" content="Hodoki – Consultoria Digital, IA e Desenvolvimento Web em Gondomar" />
+    <meta property="og:description"
+        content="A Hodoki ajuda empresas a modernizar processos com tecnologia e inteligência artificial. Consultoria digital, desenvolvimento de webapps, websites, apps e jogos, e formação em IA e ChatGPT." />
+
+
+
+
+
+
+    <!-- Compiled CSS from Vite build -->
+    <link rel="stylesheet" href="./assets/index-CxfX1zNF.css">
+</head>
+
+<body>
+    <div id="root" class="min-h-screen">
+
+        <!-- Navbar -->
+        <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent">
+            <div class="container px-4">
+                <div class="flex items-center justify-between h-16 md:h-20">
+                    <!-- Logo -->
+                    <button onclick="scrollToSection('#hero')"
+                        class="flex items-center gap-2 hover:opacity-80 transition-opacity bg-transparent border-none cursor-pointer">
+                        <img src="./assets/logo-hodoki-C1vhDoo2.png" alt="Hodoki" class="h-10 md:h-12 w-auto" />
+                    </button>
+
+                    <!-- Desktop Navigation -->
+                    <div class="hidden md:flex items-center gap-1">
+                        <button onclick="scrollToSection('#hero')"
+                            class="px-4 py-2 text-foreground/80 hover:text-foreground transition-colors rounded-lg hover:bg-muted/50 bg-transparent border-none cursor-pointer">Início</button>
+                        <button onclick="scrollToSection('#services')"
+                            class="px-4 py-2 text-foreground/80 hover:text-foreground transition-colors rounded-lg hover:bg-muted/50 bg-transparent border-none cursor-pointer">Serviços</button>
+                        <button onclick="scrollToSection('#why')"
+                            class="px-4 py-2 text-foreground/80 hover:text-foreground transition-colors rounded-lg hover:bg-muted/50 bg-transparent border-none cursor-pointer">Porquê
+                            Hodoki</button>
+
+                        <button onclick="scrollToSection('#contact')"
+                            class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 ml-2 bg-gradient-to-r from-primary to-secondary hover:opacity-90 border-none cursor-pointer">
+                            Falar connosco
+                        </button>
+                    </div>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn"
+                        class="md:hidden p-2 text-foreground hover:bg-muted/50 rounded-lg transition-colors bg-transparent border-none cursor-pointer">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 z-40 md:hidden hidden">
+            <div class="absolute inset-0 bg-background/95 backdrop-blur-md" onclick="toggleMobileMenu()"></div>
+            <div class="relative h-full flex flex-col items-center justify-center gap-6 p-8">
+                <button onclick="scrollToSection('#hero')"
+                    class="text-2xl font-semibold text-foreground hover:text-primary transition-colors bg-transparent border-none cursor-pointer">Início</button>
+                <button onclick="scrollToSection('#services')"
+                    class="text-2xl font-semibold text-foreground hover:text-primary transition-colors bg-transparent border-none cursor-pointer">Serviços</button>
+                <button onclick="scrollToSection('#why')"
+                    class="text-2xl font-semibold text-foreground hover:text-primary transition-colors bg-transparent border-none cursor-pointer">Porquê
+                    Hodoki</button>
+
+                <button onclick="scrollToSection('#contact')"
+                    class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 px-8 mt-4 bg-gradient-to-r from-primary to-secondary hover:opacity-90 border-none cursor-pointer">
+                    Falar connosco
+                </button>
+            </div>
+        </div>
+
+        <!-- Hero Section -->
+        <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+            <div class="absolute inset-0 bg-gradient-radial opacity-50"></div>
+            <div class="absolute top-20 right-20 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-pulse"></div>
+            <div
+                class="absolute bottom-20 left-20 w-96 h-96 bg-secondary/20 rounded-full blur-3xl animate-pulse delay-1000">
+            </div>
+
+            <div class="container relative z-10 px-4 py-20">
+                <div class="max-w-5xl mx-auto text-center space-y-8">
+                    <h1
+                        class="text-foreground animate-in fade-in slide-in-from-bottom-4 duration-700 text-4xl md:text-6xl font-bold tracking-tight">
+                        Hodoki – Tecnologia e IA ao serviço do teu negócio
+                    </h1>
+
+                    <p
+                        class="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto leading-relaxed animate-in fade-in slide-in-from-bottom-4 duration-700 delay-150">
+                        Consultoria, desenvolvimento e formação para empresas que querem usar a tecnologia e a
+                        inteligência artificial de forma prática, sem complicar.
+                    </p>
+
+                    <div
+                        class="flex justify-center pt-4 animate-in fade-in slide-in-from-bottom-4 duration-700 delay-300">
+                        <button onclick="scrollToSection('#contact')"
+                            class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-14 px-8 text-lg group bg-gradient-to-r from-primary to-secondary hover:opacity-90 border-none cursor-pointer">
+                            Pedir mais informações
+                            <i data-lucide="arrow-right"
+                                class="ml-2 group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                    </div>
+
+                    <div
+                        class="grid md:grid-cols-3 gap-6 pt-12 max-w-4xl mx-auto animate-in fade-in slide-in-from-bottom-4 duration-700 delay-450">
+                        <div class="flex items-start gap-3 text-left">
+                            <i data-lucide="check-circle-2" class="w-6 h-6 text-primary flex-shrink-0 mt-1"></i>
+                            <p class="text-foreground/90">Consultoria digital focada em resultados</p>
+                        </div>
+                        <div class="flex items-start gap-3 text-left">
+                            <i data-lucide="check-circle-2" class="w-6 h-6 text-secondary flex-shrink-0 mt-1"></i>
+                            <p class="text-foreground/90">Webapps, sites, apps e jogos à medida</p>
+                        </div>
+                        <div class="flex items-start gap-3 text-left">
+                            <i data-lucide="check-circle-2" class="w-6 h-6 text-primary flex-shrink-0 mt-1"></i>
+                            <p class="text-foreground/90">Formação prática em IA e ChatGPT para equipas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-20 md:py-32 relative">
+            <div class="absolute inset-0 bg-gradient-to-b from-background via-card to-background"></div>
+
+            <div class="container relative z-10 px-4">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-16">
+                        <h2 class="mb-4 text-3xl md:text-4xl font-bold">
+                            <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">O que
+                                fazemos</span>
+                        </h2>
+                        <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
+                            Combinamos tecnologia, estratégia e formação para impulsionar o teu negócio
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <!-- Service 1 -->
+                        <div
+                            class="rounded-lg border bg-card text-card-foreground shadow-sm p-8 border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_30px_hsl(var(--primary)/0.2)] group">
+                            <div
+                                class="w-16 h-16 rounded-xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <i data-lucide="brain" class="w-8 h-8 text-white"></i>
+                            </div>
+                            <h3 class="mb-4 text-foreground text-xl font-semibold">Consultoria Digital & IA</h3>
+                            <p class="text-muted-foreground leading-relaxed">
+                                Apoiamos empresas na criação de presença online, na melhoria de processos e na
+                                integração de IA. Planeamos contigo websites, aplicações de gestão e automações que
+                                tornam o trabalho mais simples e eficiente.
+                            </p>
+                        </div>
+
+                        <!-- Service 2 -->
+                        <div
+                            class="rounded-lg border bg-card text-card-foreground shadow-sm p-8 border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_30px_hsl(var(--primary)/0.2)] group">
+                            <div
+                                class="w-16 h-16 rounded-xl bg-gradient-to-br from-secondary to-primary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <i data-lucide="code" class="w-8 h-8 text-white"></i>
+                            </div>
+                            <h3 class="mb-4 text-foreground text-xl font-semibold">Desenvolvimento</h3>
+                            <p class="text-muted-foreground leading-relaxed">
+                                Desenvolvemos webapps, websites, aplicações móveis e jogos. Do conceito ao lançamento,
+                                criamos soluções rápidas, seguras e fáceis de usar, alinhadas com as necessidades do teu
+                                negócio.
+                            </p>
+                        </div>
+
+                        <!-- Service 3 -->
+                        <div
+                            class="rounded-lg border bg-card text-card-foreground shadow-sm p-8 border-border/50 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_0_30px_hsl(var(--primary)/0.2)] group">
+                            <div
+                                class="w-16 h-16 rounded-xl bg-gradient-to-br from-primary via-secondary to-primary flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                                <i data-lucide="graduation-cap" class="w-8 h-8 text-white"></i>
+                            </div>
+                            <h3 class="mb-4 text-foreground text-xl font-semibold">Formação para Empresas</h3>
+                            <p class="text-muted-foreground leading-relaxed">
+                                Formamos equipas para tirar partido da IA: uso de ChatGPT no trabalho, criação de
+                                prompts, automações e bases de programação. Sessões práticas, adaptadas aos casos reais
+                                da tua empresa.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Section -->
+        <section id="why" class="py-20 md:py-32">
+            <div class="container px-4">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-16">
+                        <h2 class="mb-4 text-3xl md:text-4xl font-bold">
+                            Porquê a <span
+                                class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">Hodoki</span>?
+                        </h2>
+                        <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
+                            Transformamos tecnologia em resultados concretos para o teu negócio
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <!-- Benefit 1 -->
+                        <div
+                            class="rounded-lg border bg-card text-card-foreground shadow-sm p-6 bg-card/50 backdrop-blur border-border/50 hover:bg-card hover:border-primary/30 transition-all duration-300">
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-12 h-12 rounded-lg bg-gradient-to-r from-primary to-secondary flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="target" class="w-6 h-6 text-white"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2 text-foreground">Foco no negócio, não só na
+                                        tecnologia</h3>
+                                    <p class="text-muted-foreground">Compreendemos os teus objetivos empresariais e
+                                        desenvolvemos soluções que geram valor real.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Benefit 2 -->
+                        <div
+                            class="rounded-lg border bg-card text-card-foreground shadow-sm p-6 bg-card/50 backdrop-blur border-border/50 hover:bg-card hover:border-primary/30 transition-all duration-300">
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-12 h-12 rounded-lg bg-gradient-to-r from-primary to-secondary flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="sparkles" class="w-6 h-6 text-white"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2 text-foreground">Integração de IA onde traz
+                                        valor real</h3>
+                                    <p class="text-muted-foreground">Implementamos inteligência artificial de forma
+                                        estratégica, em áreas que melhoram processos e resultados.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Benefit 3 -->
+                        <div
+                            class="rounded-lg border bg-card text-card-foreground shadow-sm p-6 bg-card/50 backdrop-blur border-border/50 hover:bg-card hover:border-primary/30 transition-all duration-300">
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-12 h-12 rounded-lg bg-gradient-to-r from-primary to-secondary flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="award" class="w-6 h-6 text-white"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2 text-foreground">Experiência em consultoria,
+                                        desenvolvimento e formação</h3>
+                                    <p class="text-muted-foreground">Oferecemos conhecimento completo desde o
+                                        planeamento até à execução e capacitação das equipas.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Benefit 4 -->
+                        <div
+                            class="rounded-lg border bg-card text-card-foreground shadow-sm p-6 bg-card/50 backdrop-blur border-border/50 hover:bg-card hover:border-primary/30 transition-all duration-300">
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-12 h-12 rounded-lg bg-gradient-to-r from-primary to-secondary flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="message-square" class="w-6 h-6 text-white"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-2 text-foreground">Linguagem clara, sem jargão
+                                        desnecessário</h3>
+                                    <p class="text-muted-foreground">Comunicamos de forma direta e acessível, garantindo
+                                        que todos compreendem as soluções propostas.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Services Section -->
+        <section id="details" class="py-20 md:py-32 bg-card/30">
+            <div class="container px-4">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-16">
+                        <h2 class="mb-4 text-3xl md:text-4xl font-bold">
+                            Serviços <span
+                                class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">em
+                                detalhe</span>
+                        </h2>
+                        <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
+                            Soluções completas adaptadas às necessidades da tua empresa
+                        </p>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <!-- Web & Apps -->
+                        <div
+                            class="rounded-lg border bg-card text-card-foreground shadow-sm p-8 bg-background/50 backdrop-blur border-border/50">
+                            <div
+                                class="w-14 h-14 rounded-xl bg-gradient-to-r from-primary to-secondary flex items-center justify-center mb-6">
+                                <i data-lucide="globe" class="w-7 h-7 text-white"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-6 text-foreground">Web & Apps</h3>
+                            <ul class="space-y-3 text-muted-foreground">
+                                <li class="flex items-start gap-2"><span
+                                        class="text-primary mt-1">•</span><span>Websites institucionais e landing
+                                        pages</span></li>
+                                <li class="flex items-start gap-2"><span
+                                        class="text-secondary mt-1">•</span><span>Webapps internas e dashboards de
+                                        gestão</span></li>
+                                <li class="flex items-start gap-2"><span class="text-primary mt-1">•</span><span>Apps
+                                        simples para Android/iOS</span></li>
+                                <li class="flex items-start gap-2"><span
+                                        class="text-secondary mt-1">•</span><span>Pequenos jogos para marketing ou
+                                        formação</span></li>
+                            </ul>
+                        </div>
+
+                        <!-- IA & Automação -->
+                        <div
+                            class="rounded-lg border bg-card text-card-foreground shadow-sm p-8 bg-background/50 backdrop-blur border-border/50">
+                            <div
+                                class="w-14 h-14 rounded-xl bg-gradient-to-r from-primary to-secondary flex items-center justify-center mb-6">
+                                <i data-lucide="cpu" class="w-7 h-7 text-white"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-6 text-foreground">IA & Automação</h3>
+                            <ul class="space-y-3 text-muted-foreground">
+                                <li class="flex items-start gap-2"><span
+                                        class="text-primary mt-1">•</span><span>Integrações com ChatGPT e outros modelos
+                                        de IA</span></li>
+                                <li class="flex items-start gap-2"><span
+                                        class="text-secondary mt-1">•</span><span>Automação de tarefas
+                                        repetitivas</span></li>
+                                <li class="flex items-start gap-2"><span
+                                        class="text-primary mt-1">•</span><span>Assistentes internos para equipas (FAQ,
+                                        suporte, documentação)</span></li>
+                            </ul>
+                        </div>
+
+                        <!-- Formação -->
+                        <div
+                            class="rounded-lg border bg-card text-card-foreground shadow-sm p-8 bg-background/50 backdrop-blur border-border/50">
+                            <div
+                                class="w-14 h-14 rounded-xl bg-gradient-to-r from-primary to-secondary flex items-center justify-center mb-6">
+                                <i data-lucide="users" class="w-7 h-7 text-white"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold mb-6 text-foreground">Formação</h3>
+                            <ul class="space-y-3 text-muted-foreground">
+                                <li class="flex items-start gap-2"><span
+                                        class="text-primary mt-1">•</span><span>Workshops de IA e ChatGPT para
+                                        equipas</span></li>
+                                <li class="flex items-start gap-2"><span
+                                        class="text-secondary mt-1">•</span><span>Introdução à programação para
+                                        não-programadores</span></li>
+                                <li class="flex items-start gap-2"><span class="text-primary mt-1">•</span><span>Sessões
+                                        de capacitação à medida (casos da própria empresa)</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 md:py-32 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-b from-background via-card/50 to-background"></div>
+            <div
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl">
+            </div>
+
+            <div class="container relative z-10 px-4">
+                <div class="max-w-4xl mx-auto">
+                    <div class="text-center mb-12">
+                        <h2 class="mb-4 text-3xl md:text-4xl font-bold">
+                            Contacta a <span
+                                class="bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">Hodoki</span>
+                        </h2>
+                        <p class="text-xl text-muted-foreground max-w-2xl mx-auto">
+                            Queres falar sobre um projeto, uma ideia ou formação para a tua equipa?
+                            Entra em contacto e respondemos com uma proposta simples e direta.
+                        </p>
+                    </div>
+
+                    <div
+                        class="rounded-lg border bg-card text-card-foreground shadow-sm p-8 md:p-12 bg-card/80 backdrop-blur border-border/50">
+                        <div class="grid md:grid-cols-3 gap-8 mb-10">
+                            <!-- Email -->
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-12 h-12 rounded-lg bg-gradient-to-r from-primary to-secondary flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="mail" class="w-6 h-6 text-white"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold mb-2 text-foreground">Email</h3>
+                                    <a href="mailto:hello@hodoki.pt"
+                                        class="text-primary hover:text-secondary transition-colors text-lg">hello@hodoki.pt</a>
+                                </div>
+                            </div>
+
+                            <!-- Phone -->
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-12 h-12 rounded-lg bg-gradient-to-r from-primary to-secondary flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="phone" class="w-6 h-6 text-white"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold mb-2 text-foreground">Telemóvel</h3>
+                                    <a href="tel:+351934935671"
+                                        class="text-primary hover:text-secondary transition-colors text-lg flex items-center gap-2">
+                                        <span class="text-2xl">🇵🇹</span>
+                                        +351 934 935 671
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Address -->
+                            <div class="flex items-start gap-4">
+                                <div
+                                    class="w-12 h-12 rounded-lg bg-gradient-to-r from-primary to-secondary flex items-center justify-center flex-shrink-0">
+                                    <i data-lucide="map-pin" class="w-6 h-6 text-white"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-semibold mb-2 text-foreground">Morada</h3>
+                                    <p class="text-muted-foreground">
+                                        Avenida da Conduta, nº 314<br />
+                                        Gondomar, Portugal
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CTA Button -->
+                        <div class="flex justify-center pt-4">
+                            <button id="copy-email-btn" onclick="copyEmailToClipboard()"
+                                class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-14 px-8 w-full md:w-auto group bg-gradient-to-r from-primary to-secondary hover:opacity-90 border-none cursor-pointer">
+                                <span id="copy-text-default" class="flex items-center">
+                                    <i data-lucide="copy" class="mr-2"></i>
+                                    Enviar email para a Hodoki
+                                </span>
+                                <span id="copy-text-success" class="flex items-center hidden">
+                                    <i data-lucide="check" class="mr-2"></i>
+                                    Email copiado!
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-12 border-t border-border/50">
+            <div class="container px-4">
+                <div class="max-w-6xl mx-auto">
+                    <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                        <!-- Logo -->
+                        <div class="flex items-center gap-4">
+                            <img src="./assets/logo-hodoki-C1vhDoo2.png" alt="Hodoki" class="h-12 w-auto" />
+                        </div>
+
+                        <!-- Copyright and contact -->
+                        <div class="text-center md:text-right">
+                            <p class="text-muted-foreground text-sm">
+                                © <span id="year"></span> Hodoki. Todos os direitos reservados.
+                            </p>
+                            <a href="mailto:hello@hodoki.pt"
+                                class="text-primary hover:text-secondary transition-colors text-sm">hello@hodoki.pt</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="./script.js"></script>
+    <script>
+        lucide.createIcons();
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+
+</html>
