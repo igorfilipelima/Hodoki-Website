@@ -1,113 +1,145 @@
+// Hodoki Static Site - JavaScript
+
+// ============================================
 // Navbar Scroll Effect
+// ============================================
 const navbar = document.getElementById('navbar');
 
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 50) {
-    navbar.classList.add('bg-background/95', 'backdrop-blur-md', 'border-b', 'border-border/50', 'shadow-lg');
-    navbar.classList.remove('bg-transparent');
-  } else {
-    navbar.classList.remove('bg-background/95', 'backdrop-blur-md', 'border-b', 'border-border/50', 'shadow-lg');
-    navbar.classList.add('bg-transparent');
-  }
-});
+function handleScroll() {
+    if (window.scrollY > 50) {
+        navbar.classList.add('navbar-scrolled');
+    } else {
+        navbar.classList.remove('navbar-scrolled');
+    }
+}
 
-// Mobile Menu
-const mobileMenu = document.getElementById('mobile-menu');
-const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+window.addEventListener('scroll', handleScroll);
+handleScroll(); // Check initial state
 
-mobileMenuBtn.addEventListener('click', () => {
-  toggleMobileMenu();
-});
+// ============================================
+// Mobile Menu Toggle
+// ============================================
+const mobileMenu = document.getElementById('mobileMenu');
+const menuIcon = document.getElementById('menuIcon');
+const closeIcon = document.getElementById('closeIcon');
 
 function toggleMobileMenu() {
-  if (mobileMenu.classList.contains('hidden')) {
-    mobileMenu.classList.remove('hidden');
-  } else {
-    mobileMenu.classList.add('hidden');
-  }
-}
-
-// Smooth Scroll
-function scrollToSection(selector) {
-  const element = document.querySelector(selector);
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    if (!mobileMenu.classList.contains('hidden')) {
-      toggleMobileMenu();
+    const isOpen = !mobileMenu.classList.contains('hidden');
+    
+    if (isOpen) {
+        mobileMenu.classList.add('hidden');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+        document.body.style.overflow = '';
+    } else {
+        mobileMenu.classList.remove('hidden');
+        menuIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
     }
-  }
 }
 
+// ============================================
+// Smooth Scroll to Section
+// ============================================
+function scrollToSection(selector) {
+    const element = document.querySelector(selector);
+    if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        
+        // Close mobile menu if open
+        if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+            toggleMobileMenu();
+        }
+    }
+}
+
+// ============================================
+// Copy Email to Clipboard
+// ============================================
+const copyEmailBtn = document.getElementById('copyEmailBtn');
+const copyIcon = document.getElementById('copyIcon');
+const checkIcon = document.getElementById('checkIcon');
+const copyText = document.getElementById('copyText');
+
+function copyEmail() {
+    navigator.clipboard.writeText('hello@hodoki.pt').then(() => {
+        // Show success state
+        copyIcon.classList.add('hidden');
+        checkIcon.classList.remove('hidden');
+        copyText.textContent = 'Copiado!';
+        
+        // Show toast
+        showToast('Email copiado!', 'O endereço hello@hodoki.pt foi copiado para o clipboard.');
+        
+        // Reset after 2 seconds
+        setTimeout(() => {
+            copyIcon.classList.remove('hidden');
+            checkIcon.classList.add('hidden');
+            copyText.textContent = 'Copiar email';
+        }, 2000);
+    }).catch(err => {
+        console.error('Failed to copy email:', err);
+        showToast('Erro', 'Não foi possível copiar o email.');
+    });
+}
+
+// ============================================
 // Toast Notification
-const toast = document.getElementById('toast-container');
+// ============================================
+const toast = document.getElementById('toast');
+const toastTitle = document.getElementById('toastTitle');
+const toastMessage = document.getElementById('toastMessage');
 let toastTimeout;
 
-function showToast() {
-  if (toastTimeout) clearTimeout(toastTimeout);
-
-  toast.classList.remove('translate-x-full', 'opacity-0', 'pointer-events-none');
-
-  toastTimeout = setTimeout(() => {
-    hideToast();
-  }, 3000);
+function showToast(title, message) {
+    if (toastTimeout) {
+        clearTimeout(toastTimeout);
+    }
+    
+    toastTitle.textContent = title;
+    toastMessage.textContent = message;
+    toast.classList.remove('hidden');
+    
+    toastTimeout = setTimeout(() => {
+        toast.classList.add('hidden');
+    }, 3000);
 }
 
-function hideToast() {
-  toast.classList.add('translate-x-full', 'opacity-0', 'pointer-events-none');
+// ============================================
+// Set Current Year in Footer
+// ============================================
+const yearSpan = document.getElementById('year');
+if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
 }
 
-// Copy Email to Clipboard
-function copyEmailToClipboard() {
-  const email = "hello@hodoki.pt";
-  navigator.clipboard.writeText(email).then(() => {
-    const defaultText = document.getElementById('copy-text-default');
-    const successText = document.getElementById('copy-text-success');
-
-    // Button Feedback
-    defaultText.classList.add('hidden');
-    successText.classList.remove('hidden');
-
-    // Show Toast
-    showToast();
-
-    setTimeout(() => {
-      defaultText.classList.remove('hidden');
-      successText.classList.add('hidden');
-    }, 2000);
-  }).catch(err => {
-    console.error('Failed to copy: ', err);
-  });
-}
-
+// ============================================
 // Intersection Observer for Animations
+// ============================================
 const observerOptions = {
-  root: null,
-  rootMargin: '0px',
-  threshold: 0.1
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
 };
 
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('animate-in', 'fade-in', 'slide-in-from-bottom-4', 'duration-700');
-      entry.target.style.opacity = '1';
-      observer.unobserve(entry.target);
-    }
-  });
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
 }, observerOptions);
 
-// Observe elements
+// Observe elements that should animate on scroll
 document.addEventListener('DOMContentLoaded', () => {
-  const animatedElements = document.querySelectorAll('.card-animate, section h2, section p, .grid > div');
-  animatedElements.forEach(el => {
-    el.style.opacity = '0'; // Start hidden
-    el.classList.add('opacity-0'); // Ensure it's hidden
-    observer.observe(el);
-  });
+    const animatedElements = document.querySelectorAll('.service-card, .benefit-card, .detail-card, .contact-card');
+    
+    animatedElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(el);
+    });
 });
-
-// Make functions global
-window.scrollToSection = scrollToSection;
-window.toggleMobileMenu = toggleMobileMenu;
-window.copyEmailToClipboard = copyEmailToClipboard;
-window.hideToast = hideToast;
