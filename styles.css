@@ -198,6 +198,8 @@ h3 {
     left: 0;
     right: 0;
     z-index: 50;
+    background: hsla(var(--background), 0.8);
+    backdrop-filter: blur(8px);
     transition: var(--transition-smooth);
 }
 
